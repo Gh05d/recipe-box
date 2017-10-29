@@ -60,10 +60,11 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  position: relative;
   text-align: left;
-  background-color: grey;
-  margin-top: 25px p a {
+  background-color: #fec503;
+  margin-top: 25px;
+
+  p a {
     color: red;
   }
 
@@ -81,4 +82,5 @@ footer {
   background-image: url(https://static.pexels.com/photos/255501/pexels-photo-255501.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100%;
 }

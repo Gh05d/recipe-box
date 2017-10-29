@@ -108,10 +108,15 @@ class Modal extends Component {
   };
 
   render() {
+    console.log(this.props, "modal");
+
     return (
       <div>
         <div id="overlay" />
-        <div id="content" onClick={this.onOverlayClick}>
+        <div
+          id="content"
+          className="animated fadeInUp"
+          onClick={this.onOverlayClick}>
           <div
             id="dialog"
             className={this.dialogaddclass()}

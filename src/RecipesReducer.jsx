@@ -10,7 +10,13 @@ const INITIALSTATE = {
 export default function(state = INITIALSTATE, action) {
   switch (action.type) {
     case types.ADD_RECIPE:
-      let ingredients = action.payload.ingredients.split(",");
+      let ingredients;
+      if (action.payload.ingredients) {
+        ingredients = action.payload.ingredients.split(",");
+      } else {
+        ingredients = ["No ingredients yet"];
+      }
+
       let newRecipe = {
         name: action.payload.name,
         id: action.payload.id,
