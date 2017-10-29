@@ -1,0 +1,130 @@
+#overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10001;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+#content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10002;
+  overflow: auto;
+  text-align: center;
+  overflow-scrolling: touch;
+  padding: 4px;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  &:after {
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    margin-left: -0.05em;
+    content: "";
+  }
+}
+
+#dialog {
+  position: relative;
+  outline: 0;
+  width: 100%;
+  background: white;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  max-width: 700px;
+  cursor: default;
+  min-height: 300px;
+}
+
+#header {
+  padding: 16px 8px 8px 8px;
+}
+
+#body {
+  padding-bottom: 16px;
+}
+
+.close-btn {
+  font-family: Georgia;
+  color: #080008;
+  font-size: 20px;
+  text-decoration: none;
+  padding-right: 15px;
+}
+
+.close-btn:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.headeritem {
+  width: 100%;
+  line-height: 30px;
+  padding-left: 20px;
+  float: left;
+  background-color: #c1272d;
+  color: rgb(200, 200, 200);
+}
+.headeritem-active {
+  background-color: #a32428;
+  color: white;
+}
+#popupheader {
+  height: 30px;
+  display: flex;
+  background-color: #a32428;
+}
+.close-modal-button {
+  position: absolute;
+  right: -15px;
+  font-size: 15px;
+  color: white;
+  /*background: #10161c;*/
+  background-color: #082e44;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  line-height: 35px;
+  text-align: center;
+  top: -15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modaltitlediv {
+  position: absolute;
+  top: -30px;
+  line-height: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  /*background-color: #10161c;*/
+  background-color: #082e44;
+}
+#modalbody {
+  /*position: absolute;*/
+  width: 100%;
+  /*top: 50%;*/
+  /*transform: translate(0%,-50%);*/
+}
+.modalpagetitlediv {
+  line-height: 50px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  /*border-bottom: solid 1px #10161c;*/
+  border-bottom: solid 1px #082e44;
+}
+
+.modal-input {
+  margin-bottom: 40px;
+}

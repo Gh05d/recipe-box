@@ -1,23 +1,34 @@
 import React, { Component } from "react";
+import Collapsible from "react-collapsible";
 
 class RecipeItem extends Component {
   render() {
-    const { recipe, id } = this.props;
-    console.log(this.props);
+    const { name, id, ingredients } = this.props.recipe;
+    const showIngredients = ingredients
+      ? ingredients.map((ingredient, key) => {
+          return <div key={key}>{ingredient}</div>;
+        })
+      : "No Ingredients specified yet";
 
     return (
-      <div className="card">
-        <div className="card-header" role="tab" id={`heading${id}`}>
-          <h5 className="mb-0">
-            <a data-toggle="collapse" href={`collapse${id}`}>
-              {recipe}
-            </a>
-          </h5>
-        </div>
+      <div>
+        <Collapsible trigger={name} className="recipe" openedClassName="recipe">
+          {showIngredients}
 
-        <div id={`collapse${id}`} className="collapse show" role="tabpanel">
-          <div className="card-body">Zutat 1 Zutat 2 Zutat 3</div>
-        </div>
+          <div className="button-group">
+            <button
+              className="btn btn-danger"
+              onClick={() => this.props.delete(id)}>
+              Delete Recipe <i className="fa fa-minus-square" />
+            </button>
+
+            <button
+              className="btn btn-warning"
+              onClick={() => this.props.edit(this.props.recipe)}>
+              Edit Recipe <i className="fa fa-edit" />
+            </button>
+          </div>
+        </Collapsible>
       </div>
     );
   }
